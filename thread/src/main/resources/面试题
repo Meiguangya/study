@@ -1,0 +1,38 @@
+
+> Thread run()
+```
+@Override
+public void run() {
+    if (target != null) {
+        target.run();
+    }
+}
+```
+
+> 实现Runnable和继承Thread类哪个方法更好
+1. 从代码架构角度 去解耦 
+2. 新建线程的损耗  
+实现runnable接口可以使用线程池，这样就只有一个线程
+继承Thread类的话，每次都要new出一个对象，等这个线程执行完还要去销毁。
+3. 扩展性，Java只能单继承
+
+
+> 如何正确停止线程
+1. 使用interrupt 方法通知要被停止的线程，然后被停止的线程自行处理被中断的逻辑
+
+
+> 为什么线程通信的方法wait(),notify()和notifyAll()被定义在Object类中，而
+sleep()被定义在Thread中
+
+
+
+> sleep 方法可以让线程进入waiting状态，并且不占用CPU资源
+但是不释放锁，等休眠时间过了后，继续执行
+如果休眠期间被中断了，抛出异常，并清楚中断状态
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+### 反射
+1. 一个类在内存中只有一个Class对象
+2. 一个类在被加载后，类的整个结构都会封装在Class对象中
+
+```
+// Object类里面有getClass方法
+public final native Class<?> getClass();
+```
+
+> 如何获取Class类的实例
+```
+//1.
+Class c1 = Class.forName("reflection.User")
+//2.
+Class c2 = User.class;
+//3.
+Class c3 = new User().getClass();
+```
+
+> 类加载的过程
+1. class字节码文件通过类加载器，加载到内存堆中，产生对应的
+Class 对象，并将静态数据放入方法区中  
+2. 链接  
+3. 初始化 执行类构造器clinit 收集赋值动作和静态代码块中的语句 
+
+> 类加载器
+1. 将class 文件加载到内存中，并将这些静态数据转换成方法区的运行时数据结构，
+然后在堆中生成一个代表这个类的Class对象
+作为方法区中类数据的访问入口 
+2. 类缓存，当类被加载到类加载器中，会缓存一段时间，JVM的垃圾回收机制可以回收这些Class对象 
+3. 自定义加载器->系统类加载器(System ClassLoader)->扩展类加载器(Extension ClassLoader)->根加载器(Bootstap ClassLoader) 
+4. 双亲委派机制
+
+
+> 反射中的方法可以获取对象的方法，构造器，属性等，通过反射，可以创建对象
+调用对象的方法，设置对象的属性
+
+> 反射可以拿到注解，获取注解的值
+
+
