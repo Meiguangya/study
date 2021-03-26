@@ -10,6 +10,7 @@
     <modules>
         <module>thread</module>
         <module>springboot-redis</module>
+        <module>javase</module>
     </modules>
 
     <!-- 项目的打包类型, 即项目的发布形式, 默认为 jar. 对于聚合项目的父模块来说, 必须指定为 pom -->
@@ -22,9 +23,7 @@
     </parent>
 
 
-
     <dependencies>
-
         <!--jackson-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -56,6 +55,13 @@
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
         </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.6.1</version>
+        </dependency>
+
 
     </dependencies>
 

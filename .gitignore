@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+#springboot-redis/src/test/
+#thread/src/test/

@@ -1,5 +1,6 @@
 package com.cool.jedis;
 
+import lombok.extern.slf4j.Slf4j;
 import redis.clients.jedis.Jedis;
 
 public class TestPing {
