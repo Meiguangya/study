@@ -28,12 +28,15 @@ public class KafkaProducerTest {
         props.setProperty("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
         props.setProperty("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
+        //幂等性
+        props.setProperty("enable.idempotence","true");
+
         //创建对象
         KafkaProducer<String, String> kafkaProducer = new KafkaProducer<>(props);
 
         //发送数据到topic中
-        for (int i = 0; i < 100; i++) {
-            ProducerRecord<String, String> record = new ProducerRecord<>("eatMsg", "index", i+"");
+        for (int i = 0; i < 100000; i++) {
+            ProducerRecord<String, String> record = new ProducerRecord<>("workMsg", null, i+"");
 
             kafkaProducer.send(record,(RecordMetadata recordMetadata, Exception exception)->{
                 if(exception==null){

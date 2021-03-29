@@ -36,7 +36,7 @@ public class KafkaConsumerTest {
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 
         //指定消费者的topic
-        consumer.subscribe(Arrays.asList("eatMsg"));
+        consumer.subscribe(Arrays.asList("workMsg"));
 
         //while循环不断拉取数据
         while (true) {
@@ -45,10 +45,11 @@ public class KafkaConsumerTest {
 
             for (ConsumerRecord<String, String> record : consumerRecords) {
                 String topic = record.topic();
+                int partition = record.partition();
                 long offset = record.offset();
                 String key = record.key();
                 String value = record.value();
-                log.info("topic:{},offset:{},key:{},value:{}",topic,offset,key,value);
+                log.info("topic:{},partition:{},offset:{},key:{},value:{}",topic,partition,offset,key,value);
             }
         }
 
