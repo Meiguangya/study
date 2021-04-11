@@ -1,4 +1,4 @@
-package com.cool;
+package com.cool.normal;
 
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;

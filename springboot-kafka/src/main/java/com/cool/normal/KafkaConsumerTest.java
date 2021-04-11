@@ -1,4 +1,4 @@
-package com.cool;
+package com.cool.normal;
 
 import cn.hutool.log.Log;
 import cn.hutool.log.LogFactory;

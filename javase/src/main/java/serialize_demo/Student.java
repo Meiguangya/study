@@ -1,12 +1,10 @@
 package serialize_demo;
 
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
 
 @Data
-@Slf4j
 public class Student implements Serializable{
 
     //如果不手动生成序列号  每次类改变  serialVersionUID就会变，那么之前序列化的字节文件就会反序列化失败
