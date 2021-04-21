@@ -9,7 +9,7 @@ import org.springframework.kafka.transaction.KafkaTransactionManager;
 /**
  * @author water33
  */
-@Configuration
+//@Configuration
 public class KafkaConfiguration {
 
 

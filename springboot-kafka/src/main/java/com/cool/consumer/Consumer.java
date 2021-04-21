@@ -9,8 +9,8 @@ import org.springframework.stereotype.Component;
 /**
  * @author water33
  */
-@Component
-@SuppressWarnings("all")
+//@Component
+//@SuppressWarnings("all")
 public class Consumer {
 
     /**
