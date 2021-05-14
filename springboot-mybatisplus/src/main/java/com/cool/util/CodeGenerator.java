@@ -47,7 +47,7 @@ public class CodeGenerator {
 
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
-        String projectPath = "D:\\study\\springboot-mybatis";
+        String projectPath = "D:\\study\\springboot-mybatisplus";
 
         gc.setOutputDir(projectPath+"/src/main/java");
         gc.setAuthor("water33");
