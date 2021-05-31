@@ -2,7 +2,6 @@ import cn.hutool.core.map.MapUtil;
 import com.alibaba.fastjson.JSON;
 import com.cool.EsApplication;
 import com.cool.entity.Blog;
-import com.cool.test.B;
 import org.elasticsearch.action.admin.indices.delete.DeleteIndexRequest;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
