@@ -3,7 +3,10 @@ package com.cool;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.cool.entity.SysUser;
+import com.cool.entity.TestEnum;
+import com.cool.enums.StepEnum;
 import com.cool.mapper.SysUserMapper;
+import com.cool.mapper.TestEnumMapper;
 import com.cool.service.ISysUserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +25,23 @@ class SpringbootMybatisplusApplicationTests {
     @Autowired
     SysUserMapper sysUserMapper;
 
+    @Autowired
+    TestEnumMapper testEnumMapper;
+
     @Test
     void contextLoads() {
         System.out.println("11");
     }
+
+    @Test
+    void testAddTestEnum() {
+        TestEnum t1 = new TestEnum();
+        t1.setId(2);
+        t1.setStep(StepEnum.STEP_2);
+        testEnumMapper.insert(t1);
+        System.out.println("over");
+    }
+
 
     @Test
     void testUser01() {

@@ -39,8 +39,8 @@ public class CodeGenerator {
         throw new MybatisPlusException("请输入正确的" + tip + "！");
     }
 
-    private static String jdbcUrl = "jdbc:mysql://localhost:3306/demo?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8";
-
+//    private static String jdbcUrl = "jdbc:mysql://localhost:3306/demo?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=GMT%2B8";
+    private static String jdbcUrl = "rm-wz96x2jgcghw30s95uo.mysql.rds.aliyuncs.com:3306/demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8";
     public static void main(String[] args) {
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
@@ -60,8 +60,8 @@ public class CodeGenerator {
         dsc.setUrl(jdbcUrl);
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("123456");
+        dsc.setUsername("meiguangya");
+        dsc.setPassword("1qaz@WSX");
         mpg.setDataSource(dsc);
 
         // 包配置
