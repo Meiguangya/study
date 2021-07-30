@@ -2,9 +2,7 @@ package com.cool.controller;
 
 import com.cool.zookeeper.ZKLock;
 import org.apache.curator.framework.CuratorFramework;
-import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.framework.recipes.locks.InterProcessMutex;
-import org.apache.curator.retry.RetryNTimes;
 import org.apache.zookeeper.KeeperException;
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
@@ -39,9 +37,9 @@ public class OrderController {
 
     @PostConstruct
     public void initZookeeper() {
-        client = CuratorFrameworkFactory.newClient(ZK_ADDRESS,
-                new RetryNTimes(10, 5000));
-        client.start();
+//        client = CuratorFrameworkFactory.newClient(ZK_ADDRESS,
+//                new RetryNTimes(10, 5000));
+//        client.start();
     }
 
     //zookeeper的地址
