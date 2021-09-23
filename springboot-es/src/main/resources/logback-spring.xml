@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+    <property name="log.path" value="log/boot_elk"/>
+    <property name="log.maxHistory" value="15"/>
+    <property name="log.colorPattern"
+              value="console=> %magenta(%d{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level) %boldCyan(${springAppName:-}) %yellow(%thread) %green(%logger) %msg%n"/>
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5level ${springAppName:-} %thread %logger %msg%n"/>
+
+    <property name="file.path" value="/data/logs/study"/>
+
+
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${log.colorPattern}</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到文件-->
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>${file.path}/study_file.log</file>
+        <!--  true表示添加到文件结尾，false表示清空文件   -->
+        <append>true</append>
+        <encoder>
+            <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--输出到MyAppender-->
+    <appender name="myappender" class="com.cool.logappend.MyAppender">
+
+    </appender>
+
+    <!--    &lt;!&ndash; 日志写入logstash &ndash;&gt;-->
+    <!--    &lt;!&ndash;输出到 logstash的 appender&ndash;&gt;-->
+    <!--    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">-->
+    <!--        <destination>127.0.0.1:5000</destination>-->
+    <!--        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>-->
+    <!--    </appender>-->
+
+    <!--    <logger name="com" level="TRACE">-->
+    <!--        <appender-ref ref="console"/>-->
+    <!--    </logger>-->
+
+    <logger name="com.cool.controller.FileLogController" level="DEBUG">
+        <appender-ref ref="file"/>
+    </logger>
+
+<!--    <logger name="com.cool.controller.ConsoleLogController" level="DEBUG">
+        <appender-ref ref="console"/>
+        <appender-ref ref="myappender"/>
+    </logger>-->
+
+
+    <!-- 日志输出级别 -->
+    <root level="ERROR">
+        <appender-ref ref="console"/>
+        <!--        <appender-ref ref="logstash"/>-->
+    </root>
+
+</configuration>

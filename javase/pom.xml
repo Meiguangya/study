@@ -12,12 +12,6 @@
     <artifactId>javase</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-        </dependency>
-
 
         <!-- SpringBoot Web容器 -->
         <dependency>
@@ -37,8 +31,6 @@
             <version>3.3.0</version>
         </dependency>
         <!--二维码结束-->
-
-
 
 
     </dependencies>

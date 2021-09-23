@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author meiguangya
- * @Description
+ * @Description 测试日志输出到控制台的类
  * @create 2021-09-15 17:01
  */
-@RequestMapping
+@RequestMapping("/console")
 @RestController
 @Slf4j
-public class TestController {
+public class ConsoleLogController {
 
     @GetMapping("/testLog")
     public void testLog(){
@@ -25,7 +25,13 @@ public class TestController {
 
     @GetMapping("/errorLog")
     public void errorLog(){
-        int rs = 1/0;
+        try{
+            int rs = 1/0;
+        }catch (Exception e){
+//            log.info(e.getMessage());
+//            log.info(ExceptionUtil.stacktraceToString(e));
+            e.printStackTrace();
+        }
     }
 
 }

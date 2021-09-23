@@ -3,10 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <artifactId>study</artifactId>
+        <groupId>com.cool</groupId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <groupId>com.cool</groupId>
     <artifactId>springboot-docker</artifactId>
@@ -43,8 +42,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-
-
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -66,8 +63,6 @@
                     </buildArgs>
                 </configuration>
             </plugin>
-
-
 
         </plugins>
     </build>
